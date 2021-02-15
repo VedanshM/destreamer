@@ -47,7 +47,7 @@ export const argv: any = yargs.options({
         describe: 'Let Chromium cache identity provider cookies so you can use "Remember me" during login.\n' +
                   'Must be used every subsequent time you launch Destreamer if you want to log in automatically.',
         type: 'boolean',
-        default: false,
+        default: true,
         demandOption: false
     },
     noExperiments: {
@@ -75,7 +75,7 @@ export const argv: any = yargs.options({
         alias: 'cc',
         describe: 'Check if closed captions are available and let the user choose which one to download (will not ask if only one available).',
         type: 'boolean',
-        default: false,
+        default: true,
         demandOption: false
     },
     noCleanup: {
@@ -106,7 +106,7 @@ export const argv: any = yargs.options({
     skip: {
         describe: 'Skip download if file already exists.',
         type: 'boolean',
-        default: false,
+        default: true,
         demandOption: false
     }
 })

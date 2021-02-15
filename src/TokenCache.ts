@@ -58,9 +58,9 @@ export async function refreshSession(url: string): Promise<Session> {
     const videoId: string = url.split('/').pop() ?? process.exit(ERROR_CODE.INVALID_VIDEO_GUID);
 
     const browser: puppeteer.Browser = await puppeteer.launch({
-        executablePath: getPuppeteerChromiumPath(),
-        headless: false,            // NEVER TRUE OR IT DOES NOT WORK
-        userDataDir: chromeCacheFolder,
+        executablePath: '/bin/google-chrome-stable',
+        headless: true,            // NEVER TRUE OR IT DOES NOT WORK
+        userDataDir: process.env.HOME + '/.config/google-chrome',
         args: [
             '--disable-dev-shm-usage',
             '--fast-start',
